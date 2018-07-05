@@ -1,4 +1,5 @@
 var os = require('os');
+var colors = require('colors');
 
 function formatTime() {
 	var time = os.uptime();
@@ -8,7 +9,7 @@ function formatTime() {
 	var seconds = Math.floor(time - minutes * 60);
 	
 	
-	console.log("Uptime is: " + hours + 'h ' + minutes + " min " + seconds + ' sec');
+	console.log(colors.green("Uptime: ~ ") + hours + 'h ' + minutes + " min " + seconds + ' sec');
 }  
 
 exports.print = formatTime;
